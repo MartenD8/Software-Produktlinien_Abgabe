@@ -1,0 +1,61 @@
+lamp-spl/
+│
+├── pom.xml
+├── README.md
+├── docs/
+│   ├── feature-model.png
+│   ├── structure
+│
+├── config/
+│   ├── basic-white.json
+│   ├── warm-white.json
+│   ├── color-dimmable.json
+│   └── example-invalid.json
+│
+├── src/
+│   ├── main/
+│   │   └── java/
+│   │       └── de/
+│   │           └── lamp/
+│   │               ├── core/
+│   │               │   ├── Lamp.java
+│   │               │   ├── LampFactory.java
+│   │               │   ├── LampConfiguration.java
+│   │               │   └── FeatureModelValidator.java
+│   │               │
+│   │               ├── features/
+│   │               │   ├── color/
+│   │               │   │   ├── ColorMode.java
+│   │               │   │   ├── WhiteOnly.java
+│   │               │   │   ├── WarmWhite.java
+│   │               │   │   ├── ColdWhite.java
+│   │               │   │   ├── WarmColdWhite.java
+│   │               │   │   └── RGBColor.java
+│   │               │   │
+│   │               │   ├── dimming/
+│   │               │   │   ├── DimmingControl.java
+│   │               │   │   ├── NoDimming.java
+│   │               │   │   ├── StepDimming.java
+│   │               │   │   └── ContinuousDimming.java
+│   │               │   │
+│   │               │   └── timer/
+│   │               │       ├── TimerControl.java
+│   │               │       ├── NoTimer.java
+│   │               │       ├── SimpleTimer.java
+│   │               │       └── ScheduleTimer.java
+│   │               │
+│   │               └── app/
+│   │                   ├── Main.java
+│   │                   └── ProductLauncher.java
+│   │
+│   └── test/
+│       └── java/
+│           └── de/
+│               └── lamp/
+│                   ├── FeatureModelValidatorTest.java
+│                   ├── LampFactoryTest.java
+│                   ├── DimmingFeatureTest.java
+│                   ├── ColorFeatureTest.java
+│                   └── TimerFeatureTest.java
+│
+└── target/ 
