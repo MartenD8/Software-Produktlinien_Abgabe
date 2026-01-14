@@ -1,5 +1,5 @@
 package de.spllampe.Features.Timer;
 
-public interface TimerFeature {
+public @interface TimerFeature {
     boolean getTimeable();
 }

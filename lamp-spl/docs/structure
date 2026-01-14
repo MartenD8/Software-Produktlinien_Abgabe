@@ -6,12 +6,6 @@ lamp-spl/
 │   ├── feature-model.png
 │   ├── structure
 │
-├── config/
-│   ├── basic-white.json
-│   ├── warm-white.json
-│   ├── color-dimmable.json
-│   └── example-invalid.json
-│
 ├── src/
 │   ├── main/
 │   │   └── java/
@@ -25,12 +19,9 @@ lamp-spl/
 │   │               │
 │   │               ├── features/
 │   │               │   ├── color/
-│   │               │   │   ├── ColorMode.java
-│   │               │   │   ├── WhiteOnly.java
 │   │               │   │   ├── WarmWhite.java
 │   │               │   │   ├── ColdWhite.java
-│   │               │   │   ├── WarmColdWhite.java
-│   │               │   │   └── RGBColor.java
+│   │               │   │   └── Colorful.java
 │   │               │   │
 │   │               │   ├── dimming/
 │   │               │   │   ├── DimmingControl.java
