@@ -21,6 +21,7 @@ public class ConfigurationValidator {
 
         ruleColorfulWithSteplessDimming(config, errors);
         ruleColorfulWithStepDimming(config, errors);
+        ruleColorfulWithNoDimming(config, errors);
 
         if (!errors.isEmpty()) {
             throw new ConfigurationException(buildMessage(errors));
@@ -29,10 +30,10 @@ public class ConfigurationValidator {
         
         
 
-    private static void ruleColorfulWithSteplessDimming(LampConfiguration config, List<String> errors) {
+    private static void ruleColorfulWithNoDimming(LampConfiguration config, List<String> errors) {
         if (config.getColorMode() == LampConfiguration.ColorMode.Colorful
-                && config.getDimmingMode() != LampConfiguration.DimmingMode.Stepless) {
-            errors.add("Colorful mode requires Stepless dimming.");
+                && config.getDimmingMode() != LampConfiguration.DimmingMode.NO_DIMMING ) {
+            errors.add("Colorful mode does only work without dimming.");
         }
     }
 
@@ -43,8 +44,15 @@ public class ConfigurationValidator {
         }
     }
 
+    private static void ruleColorfulWithSteplessDimming(LampConfiguration config, List<String> errors) {
+        if (config.getColorMode() == LampConfiguration.ColorMode.Colorful
+                && config.getDimmingMode() == LampConfiguration.DimmingMode.Stepless) {
+            errors.add("Colorful mode cannot use Steplessdimming.");
+        }
+    }
+
         private static String buildMessage(List<String> errors) {
-        StringBuilder sb = new StringBuilder("Invalide Lampen Konfiguration:\n");
+        StringBuilder sb = new StringBuilder("Invalid Lamp Configuration:\n");
         for (String error : errors) {
             sb.append("- ").append(error).append("\n");
         }
