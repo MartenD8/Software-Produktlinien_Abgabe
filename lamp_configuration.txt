@@ -1,0 +1,3 @@
+Color: WARM_WHITE
+Dimming: NO_DIMMING
+Timer: NO_TIMER

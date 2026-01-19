@@ -33,26 +33,26 @@ public class ConfigurationValidator {
     private static void ruleColorfulWithNoDimming(LampConfiguration config, List<String> errors) {
         if (config.getColorMode() == LampConfiguration.ColorMode.Colorful
                 && config.getDimmingMode() != LampConfiguration.DimmingMode.NO_DIMMING ) {
-            errors.add("Colorful mode does only work without dimming.");
+            errors.add("Colorful funktioniert nur ohne dimming.");
         }
     }
 
     private static void ruleColorfulWithStepDimming(LampConfiguration config, List<String> errors) {
         if (config.getColorMode() == LampConfiguration.ColorMode.Colorful
                 && config.getDimmingMode() == LampConfiguration.DimmingMode.STEP) {
-            errors.add("Colorful mode cannot use Step dimming.");
+            errors.add("Colorful kann nicht mit Step dimming.");
         }
     }
 
     private static void ruleColorfulWithSteplessDimming(LampConfiguration config, List<String> errors) {
         if (config.getColorMode() == LampConfiguration.ColorMode.Colorful
                 && config.getDimmingMode() == LampConfiguration.DimmingMode.Stepless) {
-            errors.add("Colorful mode cannot use Steplessdimming.");
+            errors.add("Colorful knn nicht mit Steplessdimming.");
         }
     }
 
         private static String buildMessage(List<String> errors) {
-        StringBuilder sb = new StringBuilder("Invalid Lamp Configuration:\n");
+        StringBuilder sb = new StringBuilder("Invalide Lampen Konfiguration:\n");
         for (String error : errors) {
             sb.append("- ").append(error).append("\n");
         }
