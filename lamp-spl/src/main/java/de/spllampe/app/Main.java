@@ -4,6 +4,8 @@ package de.spllampe.app;
 import de.spllampe.app.cli.CliWizard;
 import de.spllampe.app.cli.ConsoleIO;
 import de.spllampe.core.LampConfiguration;
+import de.spllampe.core.LampFactory;
+import de.spllampe.core.Lamp;
 
 public class Main 
 {
@@ -18,6 +20,8 @@ public class Main
 
         io.println("");
         io.println("Konfiguration erstellt:");
-        io.println(config.toDisplayString());
+        //io.println(config.toDisplayString());
+        Lamp lamp = LampFactory.createLamp(config);
+        lamp.printCapabilities();
     }
 }

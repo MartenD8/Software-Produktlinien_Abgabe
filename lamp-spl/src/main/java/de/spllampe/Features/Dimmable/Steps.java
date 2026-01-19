@@ -1,10 +1,8 @@
 package de.spllampe.Features.Dimmable;
 
-public class Steps {
-    public boolean getDimmable(){
-        return true;
-    }
-    public String getDimmtype(){
-        return "steps";
+public class Steps implements DimmableFeature {
+    
+    public String getDimmingName(){
+        return "Step";
     }
 }
